@@ -1,0 +1,92 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<div class="main-container">
+  <div *ngIf="!quizEnded && quizData">
+    <div class="question-card">
+      <div class="flex-container">
+          <div class="question-logo">
+            <img src="../../assets/images/photos/mickey1.png" height="150px" alt="logo">
+          </div>
+          <div class="flex-item">
+            <h6 style="font-family: 'Merriweather'; font-weight: 700;">You're about to be tested!</h6>
+            <h6 style="font-family: 'Merriweather'; font-weight: 400;" >Welcome {{username}}</h6>
+          </div>
+      </div>
+      <div class="horizontal-container">
+        <h6>Time Remaining: {{ remainingTime }} seconds</h6>
+        <h6>Question {{currentQuestionIndex+1}} of {{quizData.length}}</h6>
+        <h6>{{ totalPoints }} Points</h6>
+      </div>
+      <div class="progress m-3">
+        <div class="progress-bar progress-bar-striped bg-black" id= "myprogressBar" role="progressbar" [ngStyle]="{'width': (currentQuestionIndex+1)/(quizData.length)*100+'%'}" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+     </div>
+      <div>
+        <div class="image-flex-container">
+          <div class="image-flex-item">
+            <img [src]="quizData[currentQuestionIndex].imageUrl" alt="Question Image" />
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>{{ quizData[currentQuestionIndex].question }}</h3>
+        </div>
+
+        <div class="question-option">
+          <ul>
+            <li *ngFor="let option of quizData[currentQuestionIndex].options">
+              <label>
+                <input
+                  type="radio"
+                  name="selectedOption"
+                  [(ngModel)]="quizData[currentQuestionIndex].selectedAnswer"
+                  [value]="option"
+                />
+                {{ option }}
+              </label>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+        <div class="next-previous-buttons">
+          <button class="previous-button" (click)="previousQuestion()">Previous</button>
+          <button class="next-button" (click)="nextQuestion()">Next</button>
+        </div>
+        <button class="end-quiz-button" (click)="endQuiz()">End Quiz</button>
+      </div>
+
+    <div>
+    </div>
+
+</div>
+<div *ngIf="quizEnded">
+  <div class="question-card">
+    <div class="flex-container">
+      <div class="results-header">
+        <h5 style="font-family: 'Merriweather'; font-weight: 700; text-wrap: wrap;" >Your test is finished!</h5>
+      </div>
+      <div>
+        <h5 style="font-family: 'Merriweather'; font-weight: 400; text-wrap: wrap;" >Results for {{username}}</h5>
+      </div>
+        <div class="question-logo">
+          <img src="../../assets/images/photos/mickey2.png" height="250px" alt="logo">
+        </div>
+    </div>
+    <div class="results">
+      <h2 class="results-page">Congrats!!</h2>
+      <h2 class="results-page">Your results are:</h2>
+      <h4>Total Correct Answers: {{ correctAnswers }}</h4>
+      <h4>Total Incorrect Answers: {{ incorrectAnswers }}</h4>
+      <h4>Total Questions: {{ totalQuestions }}</h4>
+      <h4>Total Points: {{ totalPoints }}</h4>
+      <h4>Number of Unanswered Questions: {{ unansweredQuestions }}</h4>
+      <h4>Time Left on the Clock: {{ remainingTime }} seconds</h4>
+    </div>
+
+    <button class="retake-button" routerLink="/welcome">Take the quiz again!</button>
+    <button class="next-level-button" routerLink="/welcome">Move to Next Level!</button>
+  </div>
+
+</div>
+</div>
+
+

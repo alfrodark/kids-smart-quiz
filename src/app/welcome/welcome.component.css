@@ -1,0 +1,70 @@
+.errorMsg {
+    display: none;
+    color: red;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.bg-clrPicker{
+    background-color: #212529;
+    color: #fff;
+}
+
+.start-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #7d76e6;
+  color: white;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #45a049;
+}
+
+.custom-container {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid rgb(218, 215, 215);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border-radius: 1%;
+  background-color: rgb(248, 245, 247);
+
+}
+
+/* CSS */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #9073e0;
+  box-shadow: 0 0 5px #4CAF50;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+

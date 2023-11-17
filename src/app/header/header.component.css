@@ -1,0 +1,40 @@
+.container-fluid{
+    margin-left: 1em;
+}
+
+a span {
+    margin-left: 0.7em;
+}
+
+.bg-clrPicker{
+    background-color: #212529;
+
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  background-color: rgb(49, 48, 48);
+  width: 100%;
+  max-width: 1300px; /* Adjust the width as per your requirement */
+  margin: 0 auto;
+  padding: 1%;
+}
+
+.left-image, .center-image, .right-image {
+  max-width: 45%; /* Adjust the width as per your requirement */
+  height: auto;
+}
+
+.left-image {
+  order: 1; /* Adjust the order to position the image */
+}
+
+.center-image{
+  order: 2
+}
+
+.right-image {
+  order: 3; /* Adjust the order to position the image */
+}
